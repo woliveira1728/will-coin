@@ -14,8 +14,8 @@ interface IERC20 {
 }
 
 contract WILLCoin is IERC20 {
-    string public constant name = "WILL Coin";
-    string public constant symbol = "WILL";
+    string public name;
+    string public symbol;
     uint8 public constant decimals = 18;
 
     mapping(address => uint256) balances;
@@ -23,6 +23,8 @@ contract WILLCoin is IERC20 {
     uint256 totalSupply_ = 10 ether;
 
     constructor() {
+        name = "WILL Coin";
+        symbol = "WILL";
         balances[msg.sender] = totalSupply_;
     }
 
